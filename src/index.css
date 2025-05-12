@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@layer base {
+  h1 {
+    font-size: var(--text-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-sky-400);
+  }
+  h2 {
+    font-size: var(--text-1xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-sky-300);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  ul, ol {
+    list-style: initial;
+    margin-left: 2rem;
+  }
+  li {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4a100;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-zinc-900);
+}
+@layer components {
+  @keyframes gentleBounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  .selected {
+    animation: gentleBounce 1.5s ease-in-out infinite;
+  }
+}
