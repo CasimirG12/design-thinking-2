@@ -9,12 +9,15 @@ export type User = {
 
 export type Status = "available" | "hyperfocus" | "in meeting" | "offline";
 
+export type MessageStatus = "sent" | "waiting";
+
 export type Message = {
   id: number;
   senderId: number;
   recieverId: number;
   message: string;
   timeSent: string;
+  status: MessageStatus;
 };
 
 export type Documentation = {

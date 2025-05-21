@@ -41,6 +41,14 @@ export const users: User[] = [
     chatWaitingList: [],
     docEntries: [],
   },
+  {
+    id: 6,
+    name: "Mayer, Elon",
+    status: "available",
+    chatInbox: [],
+    chatWaitingList: [],
+    docEntries: [],
+  },
 ];
 
 export const currentUser: User = {

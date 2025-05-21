@@ -33,7 +33,9 @@ const SelectedUserChat: React.FC = () => {
           <div className="w-full flex flex-row-reverse">
             <div
               key={`msg-${message.id}`}
-              className={`${chatBubbleStyle} bg-teal-900`}
+              className={`${chatBubbleStyle} ${
+                message.status === "waiting" ? "bg-gray-500" : "bg-teal-900"
+              }`}
             >
               <p>{parseSectionReference(message.message)}</p>
               <p className="text-zinc-400">
@@ -45,6 +47,11 @@ const SelectedUserChat: React.FC = () => {
                   year: "numeric",
                 })}
               </p>
+              {message.status === "waiting" && (
+                <p className="text-gray-800 font-bold">
+                  reciever is in hyper focus, message is put on waiting list
+                </p>
+              )}
             </div>
           </div>
         )

@@ -5,7 +5,7 @@ import React, {
   useState,
   type ReactNode,
 } from "react";
-import type { Message, User } from "../types/models";
+import type { Message, MessageStatus, User } from "../types/models";
 import { messages as mockMessages } from "../mock_data/messages";
 import { useUserContext } from "./userContext";
 import { currentUser } from "../mock_data/users";
@@ -67,6 +67,10 @@ const ChatProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
     if (!selectedUser) {
       throw new Error("User not selected for message");
     }
+    let messageStatus: MessageStatus = "sent";
+    if (selectedUser.status === "hyperfocus") {
+      messageStatus = "waiting";
+    }
     const updatedMessages = [
       ...messages,
       {
@@ -75,6 +79,7 @@ const ChatProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
         recieverId: selectedUser.id,
         message: messageToSend,
         timeSent: new Date().toISOString(),
+        status: messageStatus,
       },
     ];
     setMessages(updatedMessages);

@@ -7,6 +7,7 @@ export const messages: Message[] = [
     recieverId: 3,
     timeSent: new Date("2025-03-03T13:24").toISOString(),
     message: "Hey, how are you doing?",
+    status: "sent",
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const messages: Message[] = [
     recieverId: 2,
     timeSent: new Date("2025-03-03T14:00").toISOString(),
     message: "I’m doing well, thanks for asking! How about you?",
+    status: "sent",
   },
   {
     id: 3,
@@ -21,6 +23,7 @@ export const messages: Message[] = [
     recieverId: 1,
     timeSent: new Date("2025-03-04T09:15").toISOString(),
     message: "Good morning! Just wanted to check in with you.",
+    status: "sent",
   },
   {
     id: 4,
@@ -28,6 +31,7 @@ export const messages: Message[] = [
     recieverId: 3,
     timeSent: new Date("2025-03-04T10:30").toISOString(),
     message: "Morning! I’ll be free after lunch. Let’s catch up then.",
+    status: "sent",
   },
   {
     id: 5,
@@ -35,6 +39,7 @@ export const messages: Message[] = [
     recieverId: 1,
     timeSent: new Date("2025-03-05T16:45").toISOString(),
     message: "Are we still on for the meeting tomorrow?",
+    status: "sent",
   },
   {
     id: 6,
@@ -42,6 +47,7 @@ export const messages: Message[] = [
     recieverId: 2,
     timeSent: new Date("2025-03-06T08:30").toISOString(),
     message: "Just a reminder: meeting at 10 AM today.",
+    status: "sent",
   },
   {
     id: 7,
@@ -49,6 +55,7 @@ export const messages: Message[] = [
     recieverId: 3,
     timeSent: new Date("2025-03-07T12:00").toISOString(),
     message: "Sounds good. See you at 10!",
+    status: "sent",
   },
   {
     id: 8,
@@ -56,6 +63,7 @@ export const messages: Message[] = [
     recieverId: 2,
     timeSent: new Date("2025-03-08T17:20").toISOString(),
     message: "By the way, I sent over the documents you asked for.",
+    status: "sent",
   },
   {
     id: 9,
@@ -63,6 +71,7 @@ export const messages: Message[] = [
     recieverId: 1,
     timeSent: new Date("2025-03-09T11:30").toISOString(),
     message: "Let me know if you need any help with the presentation.",
+    status: "sent",
   },
   {
     id: 10,
@@ -70,5 +79,6 @@ export const messages: Message[] = [
     recieverId: 3,
     timeSent: new Date("2025-03-10T13:50").toISOString(),
     message: "Got it, thanks for sending that over!",
+    status: "sent",
   },
 ];

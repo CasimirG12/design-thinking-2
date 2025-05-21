@@ -3,13 +3,14 @@ import { useUserContext } from "../context/userContext";
 import { useStatusColor } from "../hooks/useStatusColors";
 import SetStatusOption from "./SetStatusOption";
 import { statusOptions } from "../constants/statusOptions";
+import { useChat } from "../context/chatContext";
 
 const OwnStatus: React.FC = () => {
   const { currentUser, updateStatus } = useUserContext();
   const [open, setOpen] = useState(false); // Set to false initially to hide the dropdown
-
   // Call the hook with a fallback value to maintain consistent hook order
   const statusColor = useStatusColor(currentUser?.status ?? "offline");
+  const { setChatOpen } = useChat();
 
   if (!currentUser) {
     return null; // or a loading spinner / fallback UI
@@ -43,6 +44,9 @@ const OwnStatus: React.FC = () => {
                 setStatus={() => {
                   updateStatus(status);
                   setOpen(false);
+                  if (status === "hyperfocus") {
+                    setChatOpen(false);
+                  }
                 }}
               />
             ))}
